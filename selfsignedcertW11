@@ -3,8 +3,8 @@ $destinationFolder = "C:\Certificates"
 if (!(Test-Path -Path $destinationFolder)) {
     New-Item -ItemType Directory -Path $destinationFolder
 }
-New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -Subject "CN=User Created" | 
+$user = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+$hostname = hostname
+New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -Subject "E=$user, CN=$hostname" | 
     Export-Certificate -FilePath "$destinationFolder\user_cert.cer" -Type CERT
 pause
-
-#Update script to pull current user information to fill script instead of "User Created"
