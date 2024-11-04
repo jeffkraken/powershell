@@ -1,0 +1,10 @@
+# Create a self-signed certificate for the current user
+$destinationFolder = "C:\Certificates"
+if (!(Test-Path -Path $destinationFolder)) {
+    New-Item -ItemType Directory -Path $destinationFolder
+}
+New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -Subject "CN=User Created" | 
+    Export-Certificate -FilePath "$destinationFolder\user_cert.cer" -Type CERT
+pause
+
+#Update script to pull current user information to fill script instead of "User Created"
