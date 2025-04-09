@@ -16,8 +16,10 @@
 
 #Share the new Digital Certificate over the network and allow "Everyone - Read" permissions
 # New-SmbShare -Path C:\Certs -Name Certs -ReadAccess Everyone
-# Enable-NetFirewallRule -DisplayGroup "File and Printer Sharing"
 
+#Firewall rules to ensure lab connectivity
+# Enable-NetFirewallRule -DisplayGroup "File and Printer Sharing"
+# Enable-NetFirewallRule -Name "FPS-ICMP4-In"
 
 # Set the Hostname to Station19BBY
 #Rename-Computer -NewName Station19BBY -Force
