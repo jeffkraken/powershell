@@ -1,6 +1,3 @@
-#Verify that DC19BBY gave Station19BBY a valid IP Address via DHCP 
-# Get-NetIPAddress -AddressFamily IPv4 | Format-Table
-
 #Set the Firewall to allow inbound and outbound ping over IPv4
 # Enable-NetFirewallRule -Name FPS-ICMP4-*
 
@@ -19,7 +16,6 @@
 
 #Firewall rules to ensure lab connectivity
 # Enable-NetFirewallRule -DisplayGroup "File and Printer Sharing"
-# Enable-NetFirewallRule -Name "FPS-ICMP4-In"
 
 # Set the Hostname to Station19BBY
 #Rename-Computer -NewName Station19BBY -Force
