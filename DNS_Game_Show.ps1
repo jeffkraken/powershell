@@ -1,22 +1,10 @@
 Clear-Host
 
-$resolvers = @(
-    "1.1.1.1",
-    "8.8.8.8"
-)
+$resolvers = @("1.1.1.1", "8.8.8.8")
 
-$ips = @(
-    "1.2.3.4",
-    "8.8.4.4",
-    "12.34.56.78"
-)
+$ips = @("1.2.3.4", "8.8.4.4", "12.34.56.78")
 
-$fqdns = @(
-    "facebook.com",
-    "example.org",
-    "cybergoblin.org",
-    "nytimes.com"
-)
+$fqdns = @("facebook.com", "example.org", "cybergoblin.org", "nytimes.com")
 
 $scoreboard = @{}
 
