@@ -38,3 +38,11 @@ Note 392 300
 Note 523 300
 Note 659 500
 Note 784 1000  # G5
+
+Start-Process powershell.exe -ArgumentList @(
+    '-ExecutionPolicy', 'Bypass',
+    '-File', "`"$PSCommandPath`"",
+    '-Rerun'
+)
+
+exit
